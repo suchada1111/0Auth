@@ -1,0 +1,1213 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Prompt:wght@300;400;500;600&display=swap');
+
+:root {
+  --bg: #fff5f7;
+  --surface: #ffffff;
+  --surface-soft: #fff0f3;
+  --border: #ffe3e8;
+  --border-focus: #f472b6;
+  --text-main: #4a2835;
+  --text-muted: #9f7584;
+  --text-light: #c49ea9;
+  --accent: #f43f5e;
+  --accent-soft: #fecdd3;
+  --accent-hover: #e11d48;
+  --danger: #fb7185;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text-main);
+  font-family: 'Prompt', 'Plus Jakarta Sans', sans-serif;
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+.page-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 48px 24px 96px;
+}
+
+/* Header */
+.top-bar {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.top-bar h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #db2777;
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+}
+
+.top-bar p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* Card Panel */
+.minimal-panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 28px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 20px -4px rgba(244, 63, 94, 0.06);
+}
+
+.panel-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #db2777;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 20px;
+  display: block;
+}
+
+/* Forms */
+.form-grid-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px 20px;
+}
+
+.field-unit {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field-unit label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.field-input {
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: var(--text-main);
+  padding: 10px 14px;
+  font-size: 0.9rem;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.field-input:focus {
+  border-color: var(--border-focus);
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(244, 114, 182, 0.15);
+}
+
+.field-error {
+  color: var(--accent-hover);
+  font-size: 0.75rem;
+}
+
+/* Buttons */
+.btn-minimal {
+  padding: 10px 22px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border-radius: 12px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.btn-solid {
+  background: linear-gradient(135deg, #fb7185, #f43f5e);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(244, 63, 94, 0.25);
+}
+
+.btn-solid:hover:not(:disabled) {
+  opacity: 0.92;
+  transform: translateY(-1px);
+}
+
+.btn-solid:disabled {
+  background: #fbcfe8;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+.btn-outline {
+  background: var(--surface-soft);
+  border-color: var(--border);
+  color: var(--text-muted);
+}
+
+.btn-outline:hover:not(:disabled) {
+  background: var(--border);
+  color: var(--text-main);
+}
+
+.btn-text {
+  background: transparent;
+  border: none;
+  font-size: 0.8rem;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: color 0.15s ease;
+}
+
+.btn-text:hover {
+  color: var(--accent-hover);
+}
+
+/* Catalog Grid */
+.catalog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 36px 0 18px;
+}
+
+.catalog-header span {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.catalog-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 16px -4px rgba(244, 63, 94, 0.04);
+  transition: all 0.25s ease;
+}
+
+.catalog-item:hover {
+  transform: translateY(-3px);
+  border-color: #fbcfe8;
+  box-shadow: 0 8px 24px -4px rgba(244, 63, 94, 0.12);
+}
+
+.item-category {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: var(--surface-soft);
+  color: #db2777;
+  margin-bottom: 12px;
+}
+
+.item-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-main);
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+.item-bottom {
+  margin-top: 24px;
+  padding-top: 14px;
+  border-top: 1px solid var(--surface-soft);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.item-price {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #e11d48;
+}
+
+.item-stock {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.item-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 14px;
+  margin-top: 14px;
+  padding-top: 10px;
+}
+
+/* Product Visual & Card Upgrade */
+.catalog-item {
+  padding: 0;
+  overflow: hidden;
+  border-radius: 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.catalog-item:hover {
+  transform: translateY(-6px);
+  border-color: #fbcfe8;
+  box-shadow: 0 16px 32px -8px rgba(244, 63, 94, 0.15);
+}
+
+/* Image Frame */
+.item-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(180deg, #fff0f3 0%, #ffe4e9 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.item-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 16px;
+  transition: transform 0.4s ease;
+}
+
+.catalog-item:hover .item-image {
+  transform: scale(1.08);
+}
+
+.item-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.badge-instock {
+  background: rgba(255, 255, 255, 0.9);
+  color: #db2777;
+  backdrop-filter: blur(4px);
+}
+
+.badge-lowstock {
+  background: #f43f5e;
+  color: #ffffff;
+}
+
+/* Card Content Details */
+.item-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.item-main-info {
+  margin-bottom: 16px;
+}
+
+.item-category-pill {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
+.item-name {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-main);
+  line-height: 1.4;
+}
+
+.item-price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 16px;
+}
+
+.item-price-val {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #e11d48;
+}
+
+.item-stock-val {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Purchase & Action Controls */
+.item-button-group {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-select-product {
+  flex: 1;
+  background: #fff0f3;
+  color: #db2777;
+  border: 1px solid #fbcfe8;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.btn-select-product:hover {
+  background: #f43f5e;
+  border-color: #f43f5e;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(244, 63, 94, 0.25);
+}
+
+.item-management-row {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding-top: 12px;
+  margin-top: 12px;
+  border-top: 1px dashed var(--border);
+}
+
+
+/* Responsive Styles สำหรับหน้าจอแล็ปท็อป แท็บเล็ต และสมาร์ตโฟน */
+
+/* 1. สำหรับแท็บเล็ตและหน้าจอขนาดกลาง (ความกว้างไม่เกิน 768px) */
+@media (max-width: 768px) {
+  .page-wrapper {
+    padding: 32px 16px 64px;
+  }
+
+  .top-bar h1 {
+    font-size: 1.6rem;
+  }
+
+  .minimal-panel {
+    padding: 20px 16px;
+    border-radius: 16px;
+  }
+
+  .form-grid-layout {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .catalog-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+  }
+
+  .item-image-wrapper {
+    height: 170px;
+  }
+}
+
+/* 2. สำหรับสมาร์ตโฟน (ความกว้างไม่เกิน 480px) */
+@media (max-width: 480px) {
+  .page-wrapper {
+    padding: 24px 12px 48px;
+  }
+
+  .top-bar h1 {
+    font-size: 1.4rem;
+  }
+
+  .top-bar p {
+    font-size: 0.85rem;
+  }
+
+  /* แสดงการ์ดสินค้าเต็มความกว้าง 1 คอลัมน์บนมือถือ */
+  .catalog-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .item-image-wrapper {
+    height: 210px;
+  }
+
+  .btn-minimal {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .catalog-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .catalog-header button {
+    width: 100%;
+  }
+
+  .item-button-group {
+    flex-direction: column;
+  }
+}
+
+
+/* ========================================================
+   Mobile E-Commerce Feed (Shopee / TikTok Shop UI Style)
+   ======================================================== */
+
+@media (max-width: 640px) {
+  body {
+    background-color: #f7f7f9;
+  }
+
+  .page-wrapper {
+    padding: 16px 8px 80px;
+  }
+
+  .top-bar {
+    margin-bottom: 16px;
+    text-align: left;
+    padding: 0 4px;
+  }
+
+  .top-bar h1 {
+    font-size: 1.35rem;
+    font-weight: 700;
+  }
+
+  .top-bar p {
+    font-size: 0.75rem;
+  }
+
+  /* ย่อแผงฟอร์มให้กะทัดรัด ไม่กินพื้นที่ */
+  .minimal-panel {
+    padding: 14px 12px;
+    border-radius: 14px;
+    margin-bottom: 12px;
+    background: #ffffff;
+  }
+
+  .panel-title {
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+  }
+
+  .form-grid-layout {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .field-unit {
+    gap: 4px;
+  }
+
+  .field-unit label {
+    font-size: 0.72rem;
+  }
+
+  .field-input {
+    padding: 8px 10px;
+    font-size: 0.82rem;
+    border-radius: 8px;
+  }
+
+  .btn-minimal {
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 0.8rem;
+    border-radius: 8px;
+  }
+
+  /* หัวข้อรายการสินค้า */
+  .catalog-header {
+    margin: 18px 4px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .catalog-header span {
+    font-size: 0.8rem;
+  }
+
+  .catalog-header button {
+    width: auto;
+    padding: 4px 10px;
+    font-size: 0.72rem;
+  }
+
+  /* ฟีดสินค้าแบบ 2 คอลัมน์ เหมือน Shopee / TikTok */
+  .catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+  }
+
+  .catalog-item {
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    border: 1px solid #f1f1f5;
+  }
+
+  /* รูปสินค้าแนวตั้ง เต็มกรอบ */
+  .item-image-wrapper {
+    height: 155px;
+    background: #fff5f7;
+    position: relative;
+  }
+
+  .item-image {
+    padding: 8px;
+    object-fit: contain;
+  }
+
+  .item-badge {
+    top: 6px;
+    left: 6px;
+    font-size: 0.6rem;
+    padding: 2px 6px;
+  }
+
+  /* รายละเอียดใต้ภาพ */
+  .item-content {
+    padding: 10px 8px 12px;
+  }
+
+  .item-main-info {
+    margin-bottom: 8px;
+  }
+
+  .item-category-pill {
+    font-size: 0.62rem;
+    padding: 2px 6px;
+    margin-bottom: 4px;
+  }
+
+  .item-name {
+    font-size: 0.82rem;
+    line-height: 1.3;
+    height: 2.3em;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+  }
+
+  .item-price-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    margin-bottom: 8px;
+  }
+
+  .item-price-val {
+    font-size: 1.05rem;
+  }
+
+  .item-stock-val {
+    font-size: 0.68rem;
+  }
+
+  /* ปุ่มกดสำหรับจอมือถือ */
+  .item-button-group {
+    width: 100%;
+  }
+
+  .btn-select-product {
+    width: 100%;
+    padding: 6px 0;
+    font-size: 0.72rem;
+    border-radius: 6px;
+  }
+
+  .item-management-row {
+    margin-top: 6px;
+    padding-top: 6px;
+    gap: 8px;
+    justify-content: space-around;
+  }
+
+  .item-management-row .btn-text {
+    font-size: 0.7rem;
+    padding: 2px;
+  }
+}
+
+:root {
+  --primary-color: #ff3366;
+  --primary-hover: #e02456;
+  --bg-gradient: linear-gradient(180deg, #fff5f8 0%, #ffffff 40%, #f9f9fb 100%);
+  --surface-color: #ffffff;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --card-border: rgba(226, 232, 240, 0.8);
+  --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+  --card-hover-shadow: 0 20px 30px -10px rgba(255, 51, 102, 0.15), 0 12px 16px -8px rgba(0, 0, 0, 0.04);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', 'Prompt', sans-serif;
+  background: var(--bg-gradient);
+  min-height: 100vh;
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+}
+
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 20px 80px;
+}
+
+/* Navbar */
+.navbar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  margin-bottom: 40px;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.brand-icon {
+  font-size: 1.5rem;
+}
+
+.brand-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.highlight-text {
+  color: var(--primary-color);
+}
+
+/* User & Login Buttons */
+.user-profile-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-info-chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff0f3;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--primary-hover);
+}
+
+.logout-btn {
+  background: #f1f5f9;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.logout-btn:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.google-signin-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #ffffff;
+  color: #374151;
+  border: 1px solid #e5e7eb;
+  padding: 10px 20px;
+  border-radius: 14px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+}
+
+.google-signin-btn:hover {
+  background: #fafafa;
+  border-color: #d1d5db;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Hero Section */
+.hero-banner {
+  text-align: center;
+  padding: 40px 20px 50px;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: #ffe4eb;
+  color: var(--primary-hover);
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.hero-heading {
+  font-size: 2.75rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1.2;
+  margin-bottom: 14px;
+  background: linear-gradient(135deg, #0f172a 0%, #475569 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subtext {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  max-width: 580px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Catalog Section */
+.catalog-section {
+  margin-top: 20px;
+}
+
+.section-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 24px;
+  padding: 0 4px;
+}
+
+.section-title {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.section-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.product-count-chip {
+  background: #ffffff;
+  padding: 6px 14px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #64748b;
+  border: 1px solid #e2e8f0;
+}
+
+/* Grid สินค้า */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  justify-content: center;
+}
+
+/* การ์ดสินค้า */
+.modern-card {
+  background: var(--surface-color);
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--card-border);
+  box-shadow: var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.modern-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--card-hover-shadow);
+  border-color: rgba(255, 51, 102, 0.3);
+}
+
+.card-image-box {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background: #f8fafc;
+  overflow: hidden;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.modern-card:hover .card-img {
+  transform: scale(1.05);
+}
+
+.card-img-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  background: #f1f5f9;
+}
+
+.card-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(6px);
+  color: #059669;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.card-body {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.category-tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stock-info {
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+.card-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 16px;
+  flex-grow: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-footer-row {
+  display: flex;
+  align-items: baseline;
+  padding-top: 12px;
+  border-top: 1px dashed #f1f5f9;
+}
+
+.price-tag {
+  color: #e11d48;
+  font-weight: 800;
+}
+
+.currency {
+  font-size: 1rem;
+  margin-right: 2px;
+}
+
+.amount {
+  font-size: 1.4rem;
+  letter-spacing: -0.5px;
+}
+
+/* ปุ่มแก้ไข / ลบ */
+.admin-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.action-btn {
+  text-align: center;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.edit-btn {
+  background: #f1f5f9;
+  color: #334155;
+}
+
+.edit-btn:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.delete-btn {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.delete-btn:hover {
+  background: #fecaca;
+  color: #b91c1c;
+}
+
+/* Responsive สำหรับมือถือ */
+@media (max-width: 640px) {
+  .main-container {
+    padding: 16px 12px 60px;
+  }
+
+  .navbar-header {
+    padding: 12px 16px;
+    border-radius: 16px;
+    margin-bottom: 24px;
+  }
+
+  .hero-banner {
+    padding: 20px 10px 30px;
+  }
+
+  .hero-heading {
+    font-size: 1.85rem;
+  }
+
+  .hero-subtext {
+    font-size: 0.9rem;
+  }
+
+  /* แสดงแบบ 2 คอลัมน์กะทัดรัดสไตล์ Shopee / TikTok บนมือถือ */
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .modern-card {
+    border-radius: 14px;
+  }
+
+  .card-image-box {
+    height: 140px;
+  }
+
+  .card-body {
+    padding: 12px 10px;
+  }
+
+  .card-title {
+    font-size: 0.9rem;
+    height: 2.6em;
+    overflow: hidden;
+  }
+
+  .amount {
+    font-size: 1.15rem;
+  }
+
+  .admin-actions {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+}
+
+/* กล่อง Navbar ด้านบน */
+.navbar-header {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(255, 192, 203, 0.5);
+  box-shadow: 0 4px 20px rgba(255, 105, 135, 0.1);
+}
+
+/* ป้าย Hero Badge กลางจอ */
+.hero-badge {
+  background: #ffccd7;
+  color: #c2185b;
+}
+
+/* กรอบรูปภาพสินค้าด้านใน */
+.card-image-box {
+  background: #fff0f4;
+}
+
+:root {
+  /* สีหลักสำหรับปุ่มและไฮไลต์ (ชมพูหวานละมุน) */
+  --primary-color: #ff6584;
+  --primary-hover: #fa4f72;
+
+  /* พื้นหลังสีชมพูนมสดอ่อนๆ (Milk Pink Gradient) สบายตา */
+  --bg-gradient: linear-gradient(180deg, #fff7f9 0%, #ffedf2 50%, #ffe3eb 100%);
+
+  /* ตัวการ์ดสินค้าเป็นสีขาวสะอาด เพื่อให้ตัดกับสีนมนวลๆ */
+  --surface-color: #ffffff;
+  --text-main: #3d2b33;
+  --text-muted: #8c737d;
+  
+  /* เงาและขอบแบบละมุน */
+  --card-border: rgba(255, 214, 224, 0.7);
+  --card-shadow: 0 8px 24px -4px rgba(255, 148, 172, 0.12);
+  --card-hover-shadow: 0 16px 32px -6px rgba(255, 120, 150, 0.2);
+}
+
+body {
+  font-family: 'Quicksand', 'Mitr', sans-serif;
+  background: var(--bg-gradient);
+  background-attachment: fixed; /* ล็อกพื้นหลังให้อยู่กับที่เวลาเลื่อนหน้า */
+  min-height: 100vh;
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: 'Fredoka', 'Itim', cursive, sans-serif;
+  letter-spacing: 0.3px;
+  background: var(--bg-gradient);
+  background-attachment: fixed;
+  min-height: 100vh;
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* เพิ่มความอ้วนกลมน่ารักให้หัวข้อและชื่อแบรนด์ */
+h1, h2, h3, .brand-title, .hero-heading {
+  font-family: 'Fredoka', 'Itim', cursive, sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+/* ปรับราคาและตัวเลขให้อ้วนกลมดุ๊กดิ๊ก */
+.amount, .price-tag, .card-title {
+  font-family: 'Fredoka', 'Itim', cursive, sans-serif;
+  font-weight: 600;
+}
+
+
+body {
+  font-family: 'Outfit', 'Prompt', sans-serif;
+  letter-spacing: -0.2px;
+  background: var(--bg-gradient);
+  background-attachment: fixed;
+  min-height: 100vh;
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* หัวข้อและชื่อแบรนด์ */
+h1, h2, h3, .brand-title, .hero-heading {
+  font-family: 'Outfit', 'Prompt', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+/* ชื่อสินค้า (ให้ดูโมเดิร์น คมชัด อ่านง่าย) */
+.card-title {
+  font-family: 'Outfit', 'Prompt', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #1e293b;
+  letter-spacing: -0.3px;
+}
+
+/* ตัวเลข ราคา และปุ่มกด */
+.amount, .price-tag, .currency {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+}
+
+.category-tag, .card-badge {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
